@@ -1,0 +1,23 @@
+<div class="container">
+    <table class="table table-borderd">
+      <tr>
+        <th><button (click)="sortById()" class="btn btn-link">Book Id</button></th>
+        <th><button (click)="sortByDept()" class="btn btn-link">Book Title</button></th>
+        <th><button (click)="sortByName()" class="btn btn-link">Book Author</button></th>
+        <th><button (click)="sortBySal()" class="btn btn-link">Book Year of Publish</button></th>
+      </tr>
+      <tr>
+        <th><input type="text" placeholder="Id" [(ngModel)] = "id"></th>
+        <th><input type="text" placeholder="Title" [(ngModel)] = "title"></th>
+        <th><input type="text" placeholder="Year" [(ngModel)] = "author"></th>
+        <th><input type="text" placeholder="Year" [(ngModel)] = "year"></th>
+      </tr>
+      <tr *ngFor = "let book of books | filter : title : id : author : year">
+        <td>{{book.id}}</td>
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.year}}</td>
+      </tr>
+    </table>
+    <button (click)="ss()">mm</button>
+  </div>

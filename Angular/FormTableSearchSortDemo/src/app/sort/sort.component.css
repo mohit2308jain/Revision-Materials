@@ -1,0 +1,11 @@
+td,th{
+    border: 1px solid black;
+}
+button{
+    color: black;
+    text-decoration: none !important;
+}
+button:hover{
+    color: black;
+    text-decoration: none !important;
+}

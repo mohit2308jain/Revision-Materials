@@ -1,0 +1,91 @@
+<div class="container-fluid">
+    
+    <h3>ADD EMPLOYEE</h3>
+    <form>
+      <div class="form-group row my1">
+        <label for="staticEmail" class="col-sm-2 col-form-label">ID</label>
+        <div class="col-sm-10">
+          <input type="text" name="id" [(ngModel)]="id1">
+        </div>
+      </div>
+      <div class="form-group row my1">
+        <label for="staticEmail" class="col-sm-2 col-form-label">NAME</label>
+        <div class="col-sm-10">
+          <input type="text" name="name" [(ngModel)]="name">
+        </div>
+      </div>
+      <div class="form-group row my1">
+        <label for="staticEmail" class="col-sm-2 col-form-label">SALARY</label>
+        <div class="col-sm-10">
+          <input type="text" name="salary" [(ngModel)]="salary">
+        </div>
+      </div>
+      <div class="form-group row my1">
+        <label for="staticEmail" class="col-sm-2 col-form-label">DEPARTMENT</label>
+        <div class="col-sm-10">
+          <input type="text" name="dept" [(ngModel)]="dept">
+        </div>
+      </div>
+     
+      <div class="form-group row my1">
+        <div class="col-sm-10">
+          <button type="submit" class="btn alert-secondary" (click)="handle()">Add Employee</button>
+        </div>
+      </div>
+    </form>
+    
+  
+    <h3>SHOW ALL EMPLOYEE</h3>
+  
+    <table class="table table-bordered">
+      <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Salary</th>
+          <th colspan="2">Actions</th>
+       
+      </tr>
+        <tr *ngFor="let e of emp">
+          <td>{{e.empId}}</td>
+          <td>{{e.empName}}</td>
+          <td>{{e.empSal}}</td>
+          <td><button (click)="update(e)">UPDATE</button></td>
+          <td><button (click)="delete(e)">DELETE</button></td>
+        </tr>
+    </table>
+  
+    <h3>UPDATE EMPLOYEE</h3>
+  
+    <form>
+      <div class="form-group row my1">
+        <label for="staticEmail" class="col-sm-2 col-form-label">ID</label>
+        <div class="col-sm-10">
+          <input type="text" name="id1" [(ngModel)]="id2">
+        </div>
+      </div>
+      <div class="form-group row my1">
+        <label for="staticEmail" class="col-sm-2 col-form-label">NAME</label>
+        <div class="col-sm-10">
+          <input type="text" name="name1" [(ngModel)]="name1">
+        </div>
+      </div>
+      <div class="form-group row my1">
+        <label for="staticEmail" class="col-sm-2 col-form-label">SALARY</label>
+        <div class="col-sm-10">
+          <input type="text" name="salary1" [(ngModel)]="salary1">
+        </div>
+      </div>
+      <div class="form-group row my1">
+        <label for="staticEmail" class="col-sm-2 col-form-label">DEPARTMENT</label>
+        <div class="col-sm-10">
+          <input type="text" name="dept1" [(ngModel)]="dept1">
+        </div>
+      </div>
+     
+      <div class="form-group row my1">
+        <div class="col-sm-10">
+          <button type="submit" class="btn alert-secondary" (click)="addupdate()">Update Employee</button>
+        </div>
+      </div>
+    </form>
+  </div>

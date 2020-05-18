@@ -1,0 +1,17 @@
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th><button (click)="sortById()" class="btn btn-link">Id</button></th>
+            <th><button (click)="sortByName()" class="btn btn-link">Name</button></th>
+            <th><button (click)="sortBySal()" class="btn btn-link">Salary</button></th>
+            <th><button (click)="sortByDept()" class="btn btn-link">Department</button></th>
+         
+        </tr>
+          <tr *ngFor="let e of emp">
+            <td>{{e.empId}}</td>
+            <td>{{e.empName}}</td>
+            <td>{{e.empSal}}</td>
+            <td>{{e.empDep}}</td>
+          </tr>
+      </table>
+</div>
