@@ -2,8 +2,6 @@ import React from 'react';
 import { Table, Button, Input } from 'reactstrap';
 import books1 from '../assets/booklist';
 
-
-
 const ShowTable = (bookss) => {
     const rows = bookss.map((book) => {
         return (
@@ -31,6 +29,10 @@ class App extends React.Component {
 
     componentDidMount(){
         this.setState({books: books1})
+    }
+
+    componentDidUpdate(){
+        console.log(this.state);
     }
 
     sortByYear = (event) => { 
@@ -92,7 +94,6 @@ class App extends React.Component {
 
     handleChange = (event) => {
         
-        let data=this.state.books;
         if(event.target.name==="id"){
             this.setState({id: event.target.value})
         }
@@ -105,56 +106,36 @@ class App extends React.Component {
         else if(event.target.name==="author"){
             this.setState({author: event.target.value});
         }
-
-        if(this.state.id==null && this.state.title==='' && this.state.year==null && this.state.author===''){
-            this.setState({books: books1});
-            data=[];
-            return;
-        }
-        else{
-            if(this.state.id){
-                let id = this.state.id.toString().toLocaleLowerCase();
-                //data = this.state.books;
-                data = data.filter((book) => {
-                    return book.id.toString().toLocaleLowerCase().includes(id);
-                })
-    
-                //this.setState({books: data});
-            }
-    
-            if(this.state.title){
-                let title = this.state.title.toLocaleLowerCase();
-                //data = this.state.books;
-                data = data.filter((book) => {
-                    return book.title.toString().toLocaleLowerCase().includes(title);
-                })
-    
-                //this.setState({books: data});
-            }
-    
-            if(this.state.year){
-                let year = this.state.year.toString().toLocaleLowerCase();
-                //data = this.state.books;
-                data = data.filter((book) => {
-                    return book.year.toString().toLocaleLowerCase().includes(year);
-                })
-    
-                //this.setState({books: data});
-            }
-    
-            if(this.state.author){
-                let author = this.state.author.toLocaleLowerCase();
-                //data = this.state.books;
-                data = data.filter((book) => {
-                    return book.author.toString().toLocaleLowerCase().includes(author);
-                })
-            }
-
-            this.setState({books: data});
-        }
     }
 
     render(){
+        const { books, id, title, year, author} = this.state;
+        let filteredBooks = books;
+        
+        if(id){
+            filteredBooks = filteredBooks.filter((book) => {
+                return book.id.toString().includes(id.toString());
+            })
+        }
+        
+        if(title){
+            filteredBooks = filteredBooks.filter((book) => {
+                return book.title.toLowerCase().includes(title.toLowerCase());
+            })
+        }
+
+        if(year){
+            filteredBooks = filteredBooks.filter((book) => {
+                return book.year.toString().includes(year.toString());
+            })
+        }
+
+        if(author){
+            filteredBooks = filteredBooks.filter((book) => {
+                return book.author.toLowerCase().includes(author.toLowerCase());
+            })
+        }
+
         return(
             <React.Fragment>
                 <Table>
@@ -167,13 +148,13 @@ class App extends React.Component {
                         </tr>
                         <tr>
                             <th><Input type="number" name="id" placeholder="Enter Id" value={this.state.id} onChange={this.handleChange}/></th>
-                            <th><Input type="text" name="title" placeholder="Enter Title" value={this.state.title} onChange={this.handleChange}/></th>
+                            <th><Input type="text" name="title" placeholder="Enter Title"    onChange={this.handleChange}/></th>
                             <th><Input type="number" name="year" placeholder="Enter Year" value={this.state.year} onChange={this.handleChange}/></th>
                             <th><Input type="text" name="author" placeholder="Enter Author" value={this.state.author} onChange={this.handleChange}/></th>
                         </tr>
                     </thead>
                     <tbody>
-                    {ShowTable(this.state.books)}
+                    {ShowTable(filteredBooks)}
                     </tbody>
                 </Table>
             </React.Fragment>
