@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import SearchBox from '../Components/SearchBox';
-import CardList from '../Components/CardList';
-import Scroll from '../Components/Scroll';
-import './App.css';
+import SearchBox from './RobotComponents/SearchBox';
+import CardList from './RobotComponents/CardList';
+import Scroll from './RobotComponents/Scroll';
+import './Robots.css';
 
-class App extends Component {
+class Robots extends Component {
 	constructor(){
 		super()
 		this.state = {
@@ -38,7 +38,7 @@ class App extends Component {
 		}
 		else{
 			return(
-				<div className='tc'>
+				<div className='tc demo'>
 				  <h1 className='f1'>RoboFriends</h1>
 	     		  <SearchBox searchChange = {this.onSearchChange}/>
 		    	  <Scroll>
@@ -50,4 +50,4 @@ class App extends Component {
 	}
 }
 
-export default App;
+export default Robots;
