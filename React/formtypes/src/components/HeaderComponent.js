@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Nav, NavItem,
     Button, Modal, ModalHeader, ModalBody,
     Form, FormGroup, Input, Label } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 class Header extends React.Component{
 
@@ -32,7 +32,9 @@ class Header extends React.Component{
                     <Nav navbar>
                         <NavItem>
                             <NavLink className="nav-link" to="/controlform">Controlled Form</NavLink>
-
+                        </NavItem>
+                        <NavItem>
+                            <Link className="nav-link" to="/controlform">Form</Link>
                         </NavItem>
                     </Nav>
                     <Nav className="ml-auto" navbar>
@@ -44,6 +46,7 @@ class Header extends React.Component{
                 </Navbar>
             
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                    <ModalHeader><div class="h1">Uncontrolled Form and Modal Example</div></ModalHeader>
                     <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
                     <ModalBody>
                         <Form onSubmit={(event) => this.handleLogin(event)}>
