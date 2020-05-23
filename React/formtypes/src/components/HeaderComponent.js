@@ -34,7 +34,7 @@ class Header extends React.Component{
                             <NavLink className="nav-link" to="/controlform">Controlled Form</NavLink>
                         </NavItem>
                         <NavItem>
-                            <Link className="nav-link" to="/controlform">Form</Link>
+                            <Link className="nav-link" to="/reactreduxform">React Redux Form</Link>
                         </NavItem>
                     </Nav>
                     <Nav className="ml-auto" navbar>
