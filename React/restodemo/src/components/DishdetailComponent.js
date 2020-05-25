@@ -3,6 +3,7 @@ import { Card, CardImg, CardText, CardBody, Button, Label,
   CardTitle, Breadcrumb, BreadcrumbItem, Modal, ModalBody, ModalHeader } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 
 import Loading from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
@@ -107,13 +108,15 @@ class CommentForm extends React.Component {
 
 const RenderDish = ({dish}) => {
   return(
-    <Card>
-        <CardImg top src={baseUrl + dish.image} alt={dish.name} />
-        <CardBody>
-          <CardTitle>{dish.name}</CardTitle>
-          <CardText>{dish.description}</CardText>
-        </CardBody>
-    </Card>
+    <FadeTransform in transformProps={{exitTransform: 'scale(0.5) translateY(-50%)'}}>
+      <Card>
+          <CardImg top src={baseUrl + dish.image} alt={dish.name} />
+          <CardBody>
+            <CardTitle>{dish.name}</CardTitle>
+            <CardText>{dish.description}</CardText>
+          </CardBody>
+      </Card>
+    </FadeTransform>
   );
 }
 
@@ -121,16 +124,18 @@ const RenderComments = ({comments, postComment, dishId}) => {
   if(comments!=null){
     const comment = comments.map((comment) => {
       return(
-        <div key={comment.id}>
-          <li className="pt-2 pr-2 pb-2">{comment.comment}</li>
-          <li className="pt-2 pr-2 pb-2">{`-- ${comment.author} , ${new Intl.DateTimeFormat('en-IN', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}`}</li>
-        </div>
+        <Fade in>
+          <li key={comment.id}>
+            <p className="pt-2 pr-2 pb-2">{comment.comment}</p>
+            <p className="pt-2 pr-2 pb-2">{`-- ${comment.author} , ${new Intl.DateTimeFormat('en-IN', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}`}</p>
+          </li>
+        </Fade>
       ) 
     })
     return(
       <div>
         <h4>Comments</h4>
-        <ul className="list-unstyled">{comment}</ul>
+        <ul className="list-unstyled"><Stagger in>{comment}</Stagger></ul>
         <CommentForm dishId={dishId} postComment={postComment} />
       </div>
     )

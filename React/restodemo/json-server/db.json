@@ -201,6 +201,14 @@
       "comment": "It's your birthday, we're gonna party!",
       "author": "25 Cent",
       "date": "2011-12-02T17:57:28.556094Z"
+    },
+    {
+      "dishId": 3,
+      "rating": "5",
+      "author": "jnkmjklmk",
+      "comment": "jnnjn",
+      "date": "2020-05-25T18:15:35.079Z",
+      "id": 20
     }
   ],
   "promotions": [
@@ -263,6 +271,36 @@
       "message": "afadsfds",
       "date": "2017-12-04T09:41:49.890Z",
       "id": 1
+    },
+    {
+      "firstname": "Mohit",
+      "lastname": "Jain",
+      "telnum": "58245",
+      "email": "mohitjain5000@gmail.com",
+      "agree": true,
+      "contactType": "Email",
+      "message": "gbhnjmk",
+      "id": 2
+    },
+    {
+      "firstname": "Sam",
+      "lastname": "Smith",
+      "telnum": "98756",
+      "email": "sam@gmaj.cl",
+      "agree": true,
+      "contactType": "Email",
+      "message": "Good food!",
+      "id": 3
+    },
+    {
+      "firstname": "bhnjk",
+      "lastname": "bhnjmk",
+      "telnum": "5252",
+      "email": "mk@jnjn.dkm",
+      "agree": false,
+      "contactType": "Tel.",
+      "message": "",
+      "id": 4
     }
   ]
 }
