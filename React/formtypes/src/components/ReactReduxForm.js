@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Row, Col, Label } from 'reactstrap';
-import { Control, LocalForm, Errors } from 'react-redux-form';
+import { Control, Form, Errors } from 'react-redux-form';
 
 const required = (val) => {
     return (val && val.length);
@@ -31,8 +31,8 @@ class ReactReduxForm extends React.Component {
     }
 
     handleSubmit(values) {
-        console.log('Current State is: ' + JSON.stringify(values));
-        alert('Current State is: ' + JSON.stringify(values));
+        this.props.postFeedback(values.firstname, values.lastname, values.telnum, values.email, values.agree, values.contactType, values.message )
+        this.props.resetFeedbackForm();
     }
 
     render(){
@@ -48,7 +48,7 @@ class ReactReduxForm extends React.Component {
 
                         <div className="col-12 col-md-9">
 
-                            <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
+                            <Form model="feedback" onSubmit={(values) => this.handleSubmit(values)}>
 
                                 <Row className="form-group">
                                     <Label htmlFor="firstname" md={2}>First Name</Label>
@@ -180,7 +180,7 @@ class ReactReduxForm extends React.Component {
                                     </Col>
                                 </Row>
                                 
-                            </LocalForm>
+                            </Form>
                         </div>
                 </div>
                 

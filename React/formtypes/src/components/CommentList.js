@@ -2,14 +2,38 @@ import React from 'react';
 import { Button, Label, Modal, ModalBody, ModalHeader } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 
+import Loading from './LoadingComponent';
+
 const CommentList = (props) => {
-    if (props.comments != null){
+
+    if (props.isLoading) {
+      return(
+          <div className="container">
+              <div className="row">            
+                  <Loading />
+              </div>
+          </div>
+      );
+    }
+    else if (props.errMess) {
+        return(
+            <div className="container">
+                <div className="row">            
+                    <h4>{props.errMess}</h4>
+                </div>
+            </div>
+        );
+    }
+    else if (props.comments != null){
+      
+      console.log('Comment: ' + props);
+      
       return(
         <div className="container">
           <div className="row">
               <div className="col-12 col-md-5 m-1">
                   <RenderComments comments={props.comments} 
-                    addComment={props.addComment} />
+                     postComment={props.postComment} />
               </div>
           </div>
           
@@ -25,7 +49,7 @@ const CommentList = (props) => {
 
 export default CommentList;
 
-const RenderComments = ({comments, addComment}) => {
+const RenderComments = ({comments, postComment}) => {
     if(comments!=null){
       const comment = comments.map((comment) => {
         return(
@@ -40,7 +64,7 @@ const RenderComments = ({comments, addComment}) => {
         <div>
           <h4>Comments</h4>
           <ul className="list-unstyled">{comment}</ul>
-          <CommentForm addComment={addComment} />
+          <CommentForm postComment={postComment} />
         </div>
       )
     }
@@ -75,7 +99,7 @@ class CommentForm extends React.Component {
   
     handleSubmit = (values) => {
       this.toggleModal();
-      this.props.addComment( values.rating, values.author, values.comment);
+      this.props.postComment(values.rating, values.author, values.comment);
     }
   
     render(){

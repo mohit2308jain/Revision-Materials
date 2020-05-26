@@ -1,15 +1,24 @@
-import { COMMENTS } from '../shared/comments';
 import * as ActionTypes from './ActionTypes';
 
-//Reducers example taking state and action as arguments and updating the state with value changes due to action
-export const Comments = (state = COMMENTS, action) => {
-    switch(action.type){
-        case ActionTypes.ADD_COMMENT:
-            let comment = action.payload;
-            comment.id = state.length;
-            comment.date = new Date().toISOString();
-            return state.concat(comment);
-        
-        default: return state;
-    }
-}
+export const Comments = (state = { isLoading: true,
+            errMess: null, 
+            comments:[]
+        }, action) => {
+  switch (action.type) {
+    case ActionTypes.ADD_COMMENTS:
+      return {...state, isLoading: false, errMess: null, comments: action.payload};
+
+    case ActionTypes.COMMENTS_FAILED:
+      return {...state, isLoading: false, errMess: action.payload};
+
+    case ActionTypes.COMMENTS_LOADING:
+      return {...state, isLoading: true, errMess: null, comments: []}
+
+    case ActionTypes.ADD_COMMENT:
+        let comment = action.payload;
+        return { ...state, isLoading: false, comments: state.comments.concat(comment)};
+
+    default:
+      return state;
+  }
+};

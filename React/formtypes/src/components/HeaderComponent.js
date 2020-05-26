@@ -39,6 +39,9 @@ class Header extends React.Component{
                         <NavItem>
                             <Link className="nav-link" to="/reduxdemo">Comment List</Link>
                         </NavItem>
+                        <NavItem>
+                            <Link className="nav-link" to="/fetchexample">Fetch Example</Link>
+                        </NavItem>
                     </Nav>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
