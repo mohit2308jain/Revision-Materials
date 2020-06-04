@@ -1,5 +1,4 @@
 import React from 'react';
-import { Table, Button } from 'reactstrap';
 import books1 from '../../assets/booklist.json';
 import SearchBox from './SearchBox';
 import Content from "./Content";
