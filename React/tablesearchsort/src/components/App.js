@@ -4,6 +4,7 @@ import TableSearch2 from "./Table Search/TableSearch2";
 import TableSort from "./TableSort";
 import Header from "./Header";
 import Robots from "./Robots";
+import ShowCards from './Cards/ShowCards';
 import { Switch, Route, Redirect } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -19,6 +20,7 @@ class App extends React.Component {
                         <Route path="/tablesearch" component={() => <TableSearch />} />
                         <Route path="/tablesort" component={() => <TableSort />} />
                         <Route path="/robots" component={() => <Robots />} />
+                        <Route path="/cards" component={ShowCards} /> 
                         <Route path="/tablesearch2" component={() => <TableSearch2 />} />
                         <Redirect to="/tablesearch" />
                     </Switch>

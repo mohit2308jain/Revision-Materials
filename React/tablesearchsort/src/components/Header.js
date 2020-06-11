@@ -25,6 +25,11 @@ class Header extends React.Component {
                                 </NavLink>
                             </NavItem>
                             <NavItem>
+                                <NavLink className="nav-link" to="/cards">
+                                <span className="fa fa-home fa-lg"></span>Cards
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
                                 <NavLink className="nav-link" to="/tablesearch2">
                                 <span className="fa fa-home fa-lg"></span>TableSearch2
                                 </NavLink>

@@ -18,9 +18,6 @@ const ShowTable = (bookss) => {
 
 class Content extends React.Component{
 
-    constructor(props){
-        super(props);
-    }
 
     sortByYear = (event) => { 
         let data = this.props.filteredbooks;
