@@ -4,7 +4,7 @@ import jsonPlaceHolder from '../apis/jsonPlaceHolder';
 export const fetchPostsAndUsers = () => {
     return async (dispatch, getState) => {
         await dispatch(fetchPosts());
-        
+        console.log("hellll", getState())
         /*
         const userIds = _.uniq(_.map(getState().posts, 'userId'));
         userIds.forEach((id) => dispatch(fetchUser(id)));
