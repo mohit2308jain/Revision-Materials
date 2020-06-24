@@ -37,6 +37,10 @@ app.post('/register', (req, res) => {
 
 app.put('/image', image.handleImage(db));
 
+app.post('/imageurl', (req, res) => {
+    image.handleApiCall(req, res)
+});
+
 app.get('/profile/:id', (req, res) => {
     profile.getProfile(req, res, db);
 })
