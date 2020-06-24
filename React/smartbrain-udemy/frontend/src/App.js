@@ -10,7 +10,6 @@ import Signin from './components/Signin';
 import Register from './components/Register';
 
 import Particles from 'react-particles-js';
-import Clarifai from 'clarifai';
 
  const particlesOptions = {
   particles: {
