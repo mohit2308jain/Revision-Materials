@@ -1,0 +1,39 @@
+body{
+    background: #011627;
+    font-family: "inter";
+}
+button{
+    margin: 1rem;
+    position: relative;
+    font-size: 2rem;
+    padding: .8rem 1.5rem;
+    background: transparent;
+    color: whitesmoke;
+    border: solid 1px pink;
+    z-index: 1;
+    transition: .4s ease-in;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: .2rem;
+    letter-spacing: .2rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+button:before{
+    content: "";
+    background: pink;
+    left: 0;
+    bottom: 0;
+    transition: .4s ease-in;
+    z-index: -1;
+    height: 100%;
+    width: 8px;
+    position: absolute;
+}
+button:hover:before{
+    width: 100%;
+}
+button:hover{
+    color: #000;
+}
