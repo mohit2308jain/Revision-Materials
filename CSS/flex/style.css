@@ -1,0 +1,16 @@
+body{
+	background: linear-gradient(135deg, cyan, orange 60%, cyan);
+	font-family:forte;
+	background-size:cover;
+	color: #000;
+}
+
+h4{
+	color:blue;
+	border:3px dashed purple;
+	text-align:center;
+}
+
+.des input{
+	color:blue;
+}

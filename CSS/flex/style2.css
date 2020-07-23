@@ -1,0 +1,124 @@
+.image{
+	border: 5px solid black;
+	float: left;
+}
+.topic{
+	background-color: lightgreen;
+	color: teal;
+	line-height: 90px;
+	font-size: 70px;
+	text-align: center;
+	border: 3px dashed blue;
+	font-family: "Arial black";
+	border-radius: 20px;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#log{
+	font-family: Georgia;
+	color:black;
+	background-color: lightgreen;
+	margin:10px;
+}
+#log:hover{
+	font-family: "Arial black";
+	padding:10px;
+}
+
+body{
+	background: linear-gradient(-45deg, #35577D, #141E20);
+}
+.name{
+	font-size:20px;
+	color: rgba(255, 255, 255, 0.5);;
+    font-family: Georgia;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    width: 20%;
+    padding: 5px;
+}
+#para1{
+	text-align: center;
+	font-family: "monotype corsiva";
+	font-weight: bolder;
+	font-size: 200%;
+	color: #191970;
+	border: 4px dotted blue;
+	background-color: lightgreen;
+	width:10%px;
+	display:inline-block;
+}
+h2{
+	color: #EEE;
+	opacity: .9;
+	font-size: 130%;
+	font-family: "copper black";
+}
+p{
+	color: #EEE;
+	font-size: 90%;
+	font-family: "Arial";
+	font-weight: bold;
+	font-style: italic;
+	padding: 10px;
+}
+a{
+	color: #000000;
+	background-color: lightgreen;
+	border: 1px;
+	font-size: 90%;
+	font-family: "Arial";
+	font-weight: bold;
+}
+h5{
+	color: #EEE;
+	font-size: 110%;
+	font-family: "Arial";
+	font-weight: bold;
+}
+ul{
+	color: #000000;
+	background-color: lightgreen;
+	border: 1px;
+	font-size: 90%;
+	font-family: "Arial";
+	font-weight: bold;
+	display: inline-block;
+}
+.list1{
+	color: #000000;
+	background-color: lightgreen;
+	font-size: 100%;
+	font-family: "Arial";
+	font-weight: bold;
+	display: inline-block;
+}
+
+
+img{
+	border: 5px solid black;
+	float: right;
+	border-radius: 25px;
+}
+
+.im {
+  background-image: url("https://travelislife.org/wp-content/uploads/IG-Hashtags-Featured.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  border: 10px solid black;
+  border-radius: 25px;
+}
+.caption {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 14px;
+  margin-left: 20px;
+  padding: 10px;
+  position: absolute;
+  color: black;
+  background-color: white;
+  opacity: 0.75;
+}

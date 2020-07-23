@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vacation World</title>
+  <link href="style2.css" type="text/css" rel="stylesheet">
+  <script src=" http://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+
+<body><br>
+  <div class="topic" onclick="say()">Top Vacation Spots</div>
+  <h5><a href="form.html" id = "log">Login</a></h5>
+  <img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-2/explorer.jpeg" class="image">
+  
+  <p class="name">By: Stacy Gray</p>
+  <p class="name">Published: 2 Days Ago</p><hr><br>
+
+  <p id="para1">The world is full of fascinating places. Planning the perfect vacation involves packing up, leaving home, and experiencing something new.</p>
+
+  <h2>1. Florence, Italy</h2>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIRrOcpdMgzRsbZ1SUA19o7aMkrvUSj-DhytEKGbnRD9WOSu_UQw" class="image1" width="400px" heigth="400px">
+  <div><p>
+  	A city-size shrine to the Renaissance, Florence offers frescoes, sculptures, churches, palaces, and other monuments from the richest cultural flowering the world has known. Names from its dazzling historical pastDante, Michelangelo, Galileo, Machiavelliare some of the most resonant of the medieval age.
+  	<a href="http://travel.nationalgeographic.com/travel/city-guides/florence-italy/" target="_blank">Learn More</a>.</p>
+
+    <h5>Top Attractions</h5>
+    <ul>
+      <li>Museums</li>
+      <li>Bike Tours</li>
+      <li>Historical Monuments</li>
+    </ul>
+  </div><br><br>
+
+  <h2>2. Seoul, South Korea</h2>
+  <img src="http://www.roomsuggestion.com/userfiles/images/Seoul.jpg" class="image1" width="400px" heigth="400px" >
+  <div><p>
+  	The Korean capital is a city of contrasts. Fourteenth-century city gates squat in the shadow of 21st-century skyscrapers, while the broad Han River is back-dropped by granite mountains rising in the city centercomplete with alpine highways speeding around their contours and temples nestling among their crags. Fashionable, gadget-laden youths battle for sidewalk space with fortune-tellers and peddlers, while tiny neighborhoods of traditional cottages contrast with endless ranks of identical apartments.
+    <a href="http://travel.nationalgeographic.com/travel/city-guides/seoul-south-korea/" target="_blank">Learn More</a>.</p>
+
+    <h5>Top Attractions</h5>
+    <ul>
+      <li>Parasailing</li>
+      <li>Segway Tours</li>
+      <li>Spas and Resorts</li>
+    </ul>
+  </div><br><br>
+
+  <h2>3. Beijing, China</h2>
+  <img src="https://wearesocial-net.s3.amazonaws.com/wp-content/uploads/2017/06/Beijing-city.jpg" class="image1" width="400px" heigth="400px" >
+  <div><p>
+  	A city in the midst of reinventing itself and continuing to build on the success of the 2008 Summer Olympics, Beijing is a place of frenzied construction. New housing, new roads, and new sports venues seem to spring up overnight. At the same time, the capital of the Peoples Republic of China remains an epicenter of tradition, with the treasures of nearly 2,000 years as the imperial capital still on viewin the famed Forbidden City and in the luxuriant pavilions and gardens of the Summer Palace.
+    <a href="http://travel.nationalgeographic.com/travel/city-guides/beijing-china/" target="_blank">Learn More</a>.</p>
+
+    <h5>Top Attractions</h5>
+    <ul>
+      <li>Biking</li>
+      <li>Historical Sites</li>
+      <li>Restaurants and Dining</li>
+    </ul>
+  </div>
+
+  <h2> More Desinations </h2>
+  <ul class= "list1">
+    <li>Jackson Hole, Wyoming</li>
+    <li>Cape Town, South Africa</li>
+    <li>La Paz, Bolivia</li>
+  </ul>
+
+  <p>&mdash;Best of luck with your travels, and be sure to send pictures and stories. We"d love to hear them!</p>
+
+
+  <div class="im">
+    <p class="caption">Travel is life.</p>
+  </div>
+
+
+</body>
+
+<script type="text/javascript">
+	function say(){
+		console.log("good");
+		$(".topic").html("Good");
+		$(".topic").click(function(){
+			$(".topic").html("Hello");
+			$(".topic").off("click");
+		});
+	}
+</script>
+</html>

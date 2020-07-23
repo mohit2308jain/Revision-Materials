@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="style.css" type="text/css" rel="stylesheet">
+	<title>Registration form</title>
+</head>
+<body>
+	<h4>Please enter your details:</h4>
+	<form class = "des" method = "GET">
+		First Name : <input type = "text" name = "firstname" required><br><br>
+		Last Name : <input type = "text" name = "lastname" required><br><br>
+		Email : <input type = "email" name = "email" required><br><br>
+		Password : <input type = "password" name = "password" minlength = "8" required><br><br>
+		DOB : <input type = "date" required><br><br>
+		Gender : <br>
+		<input type = "radio" name = "gender" value = "Male">Male<br>
+		<input type = "radio" name = "gender" value = "Female">Female<br><br>
+		Skills : <br>
+		<!--when used value in place of on value will be displayed-->
+		<input type = "checkbox" name = "C" value = "htmls"> C <br>
+		<input type = "checkbox" name = "C++"> C++ <br>
+		<input type = "checkbox" name = "Java"> Java <br>
+		<input type = "checkbox" name = "Python"> Python <br><br>
+		Plan : <br>
+		<select name = "Plan">
+			<option value = "Select option"> Choice</option>
+			<option value = "1000 Rupees plan" name = "1000"> 1000</option>
+			<option value = "1500 Rupees plan" name = "1500"> 1500</option>
+			<option value = "2000 Rupees plan" name = "2000"> 2000</option>
+		</select><br><br>
+		<input type = "submit" value = "Log in">
+		<input type = "reset" value = "Clear">
+	</form>
+
+</body>
+</html>
