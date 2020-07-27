@@ -1,8 +1,0 @@
-To generate api key
-
-1. https://console.developers.google.com/
-2. Make project
-3. Enable APIs and services
-4. Search for youtube data api
-5. create credientials
-6. Generate key

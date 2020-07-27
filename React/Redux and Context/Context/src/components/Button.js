@@ -13,7 +13,7 @@ class Button extends React.Component{
                     {/* This function will be automatically invoked
                         give the value of conusmer which conatins 
                         the context value */}
-                    {(value) => this.renderSubmit(value)}
+                    {({ language }) => this.renderSubmit(language)}
                 </LanguageContext.Consumer>
             </button>)
     }
